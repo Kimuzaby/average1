@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<title>Avarage</title>
+<link rel="stylesheet" type="text/css" href="CSS/estilos.css">
+<link rel="icon"  href="media/icono.ico">
+<meta charset="utf-8">
+<style>
+input {
+  background-color:  #82E0AA ;
+  font-size: x-large;
+  font-family: "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+ h3 {
+  background-color: #0174DF;
+  font-size: x-large;
+  font-family: "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+p{
+  background-color: #E5E7E9;
+  font-size: xx-large;
+}
+
+
+</style>
+<body bgcolor="#AED6F1">
+	<h1 id="h1" style="background-color: white">Bienvenido Usuario</h1>
+	<center><h2 style="background-color: white">Procesador de datos</h2></center>
+	<center><button id="button2" onclick="seleccionnombre()">Cambiar Usuario</button></center>
+	<div>
+ <p>Mueve los controles para ingresar tu nota</p>
+		<center><img src="media/logo.jpg" title="You have to know it!"></center>
+	</div>
+
+<form>
+<h3>Lenguaje:</h3><br>
+ <input type="range" id="t1"value="00.00" max="10.00" step ="0.01" oninput="num1.value = this.value">
+ <output id="num1">0</output>
+ <br>
+ <h3>Matemática:</h3><br>
+ <input type="range" id="t2"value="00.00" max="10.0" step ="0.01" oninput="num2.value = this.value">
+ <output id="num2">0</output>
+ <br>
+ <h3>Ciencias:</h3><br>
+<input type="range" id="t3"value="00.00" max="10.00" step ="0.01" oninput="num3.value = this.value">
+ <output id="num3">0</output>
+ <br>
+ <h3>Estudios Sociales:</h3><br>
+ <input type="range" id="t4"value="00.0" max="10.0" step ="0.01" oninput="num4.value = this.value">
+ <output id="num4">0</output>
+ <br><br>
+ <input type="button" value="Calcular" onclick="Calcular();">
+</form> 
+<p id="promedio"></p>
+<p id="demo 1"></p>
+<p id="demo 2"></p>
+
+
+</body>
+<script>
+
+
+var miBoton2=document.getElementById("button2");
+var miTitulo=document.getElementById("h1");
+	function seleccionnombre(){
+		var miNombre=prompt("Por favor ingresa tu nombre." , "Alumno/a");
+		localStorage.setItem("nombre",miNombre);
+			miTitulo.innerHTML="Bienvenido/a , "+miNombre+ " ingresa la calificación correspondiente a cada materia.";
+}
+
+if (localStorage.getItem("nombre")) {
+	seleccionnombre();
+}
+else{
+	var storedName=localStorage.getItem("nombre");
+	miTitulo.innerHTML="Bienvenido/a, "+storedName+ + " ingresa la calificación correspondiente a cada materia.";
+
+	miBoton2.onclick=function(){
+		seleccionnombre();
+	}
+}
+ function Calcular() {
+ 	var texto;
+ 	var texto2;
+ 	var vr1 = document.getElementById('t1').value;
+ 	var vr2 = document.getElementById('t2').value;
+ 	var vr3 = document.getElementById('t3').value;
+ 	var vr4 = document.getElementById('t4').value;
+ 	var P = (parseFloat(vr1)+parseFloat(vr2)+parseFloat(vr3)+parseFloat(vr4))/4;
+
+ if  ( P>=8.5 && P<=10 )  {
+    texto= "Aprobado, felicidades. "
+    alert("La magia es creer en ti mismo. Si puedes hacer eso, puedes hacer que suceda cualquier cosa. -Johann Wolfgang von Goethe.       Promedio " + P);  
+  } 
+    else if (P < 8.5){
+      texto = "Reprobado, esfuerzate más " + P
+      alert("El éxito no es definitivo, el fracaso no es fatal: lo que cuenta es el coraje para continuar. -Winston Churchill.     Promedio " + P);
+    }
+    else  {
+     texto = "Intenta de nuevo! Número inválido o fuera de rango. ";
+    }
+
+  if (isNaN(P)) {
+    alert("Campo vacío, llena todos los espacios.");
+}   
+	else {
+	 texto2 = "Para atrás, ni para agarrar impulso - Roberto Palomo.";
+	} 
+  
+ document.getElementById("demo 1").innerHTML = texto;
+ document.getElementById("demo 2").innerHTML = texto2;
+ document.getElementById('promedio').innerHTML = P;
+ }
+
+
+ 
+
+
+  
+ 
+
+
+</script>
+</html>

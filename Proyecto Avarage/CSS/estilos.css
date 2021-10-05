@@ -1,0 +1,94 @@
+input[type=range] {
+  height: 43px;
+  -webkit-appearance: none;
+  margin: 10px 0;
+  width: 70%;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 14px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 2px 2px 0px #000000;
+  background: #70BCFF;
+  border-radius: 50px;
+  border: 2px solid #04098A;
+}
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 1px 1px 1px #828282;
+  border: 1px solid #8A8A8A;
+  height: 35px;
+  width: 35px;
+  border-radius: 23px;
+  background: #DADADA;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -12px;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #70BCFF;
+}
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 14px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 2px 2px 0px #000000;
+  background: #70BCFF;
+  border-radius: 50px;
+  border: 2px solid #04098A;
+}
+input[type=range]::-moz-range-thumb {
+  box-shadow: 1px 1px 1px #828282;
+  border: 1px solid #8A8A8A;
+  height: 35px;
+  width: 35px;
+  border-radius: 23px;
+  background: #DADADA;
+  cursor: pointer;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 14px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: #70BCFF;
+  border: 2px solid #04098A;
+  border-radius: 100px;
+  box-shadow: 2px 2px 0px #000000;
+}
+input[type=range]::-ms-fill-upper {
+  background: #70BCFF;
+  border: 2px solid #04098A;
+  border-radius: 100px;
+  box-shadow: 2px 2px 0px #000000;
+}
+input[type=range]::-ms-thumb {
+  margin-top: 1px;
+  box-shadow: 1px 1px 1px #828282;
+  border: 1px solid #8A8A8A;
+  height: 35px;
+  width: 35px;
+  border-radius: 23px;
+  background: #DADADA;
+  cursor: pointer;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: #70BCFF;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #70BCFF;
+}
+
+img{
+  height: 200px;
+  width: 200px;
+}
